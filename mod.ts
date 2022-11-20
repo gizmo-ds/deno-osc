@@ -128,7 +128,7 @@ export class Message {
   public static async fromBuffer(b: Uint8Array) {
     const [addr, n1] = await this.readStr(b);
     const [tags, n2] = await this.readStr(b.slice(n1));
-    if (tags[0] !== ",") return;
+    if (tags[0] !== ",") return {};
     const buf = new Buffer(b.slice(n1 + n2));
     const args: MsgType[] = [];
     for (const tag of tags.slice(1).split("")) {
@@ -182,7 +182,7 @@ export class Message {
           break;
       }
     }
-    console.log(addr, args);
+    return { addr, args };
   }
 
   private static async readStr(b: Uint8Array): Promise<[string, number]> {
