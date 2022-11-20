@@ -1,4 +1,4 @@
-# deno-osc (WIP)
+# deno-osc
 
 ![Deno](https://img.shields.io/badge/-Deno-4f4f4f?logo=deno&style=flat)
 ![Latest tag](https://img.shields.io/github/v/tag/gizmo-ds/deno-osc?label=latest)
